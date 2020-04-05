@@ -101,7 +101,9 @@
             </div>
         </fieldset>
     </div>
+
     <!--=======================================================================================-->
+
     <div class="section">
         <h3>VITAL SIGNS</h3>
         <fieldset>
@@ -144,92 +146,86 @@
         </fieldset>
     </div>
 
-    <!--=======================================================================================-->
+
     <hr/>
     <h3> CLINICAL HISTORY </h3>
     <hr/>
     <fieldset>
-        <h4>General Examination</h4>
-        <div class="form-group freetext">
-            <label for="freetext_general_ch">General Status</label>
-            <textarea class="form-control" id="freetext_general_gs" name="freetext_general"
-                      type="text" data-concept="c6cf5b47-d240-409b-be1c-c3ce7ca5c424^General Status"></textarea>
-        </div>
         <h4>CHIEF COMPLAINTS</h4>
-            <label>
-                <input id="obs.SYMPTOMPRESENT" name="obs.SYMPTOMPRESENT" type="checkbox"
-                       data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
-                       value="3cf1898e-26fe-102b-80cb-0017a47871b2^FEVER^99DCT">
-                FEVER
-            </label>
-            <label>
-                <input id="obs.ScreeningThoughPapSmear" name="obs.ScreeningThough" type="checkbox"
-                       data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
-                       value="3cd24178-26fe-102b-80cb-0017a47871b2^HEADACHE^99DCT">
-                HEADACHE
-            </label>
-            <label>
-                <input id="obs.ScreeningThoughHPVDNATest" name="obs.ScreeningThough" type="checkbox"
-                       data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
-                       value="3ce14056-26fe-102b-80cb-0017a47871b2^DRY COUGH^99DCT">
-                DRY COUGH
-            </label>
-            <label>
-                <input id="obs.PositivePastScreeningResult" name="obs.PastScreeningResult" type="checkbox"
-                       data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
-                       value="3ccd2364-26fe-102b-80cb-0017a47871b2^CHEST PAIN^99DCT">
-                CHEST PAIN
-            </label>
-            <label>
-                <input id="obs.NegativePastScreeningResult" name="obs.PastScreeningResult" type="checkbox"
-                       data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
-                       value="3cccc7ac-26fe-102b-80cb-0017a47871b2^RHEUMATISM^99DCT">
-                RHEUMATISM
-            </label>
-            <label>
-                <input id="obs.ResultsNotReceivedPastScreeningResult" name="obs.PastScreeningResult" type="checkbox"
-                       data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
-                       value="3ce50fec-26fe-102b-80cb-0017a47871b2^LOSS OF APPETITE^99DCT">
-                LOSS OF APPETITE
-            </label>
+        <label>
+            <input id="obs.SYMPTOMPRESENT" name="obs.SYMPTOMPRESENT" type="checkbox"
+                   data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
+                   value="3cf1898e-26fe-102b-80cb-0017a47871b2^FEVER^99DCT">
+            FEVER
+        </label>
+        <label>
+            <input id="obs.ScreeningThoughPapSmear" name="obs.ScreeningThough" type="checkbox"
+                   data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
+                   value="3cd24178-26fe-102b-80cb-0017a47871b2^HEADACHE^99DCT">
+            HEADACHE
+        </label>
+        <label>
+            <input id="obs.ScreeningThoughHPVDNATest" name="obs.ScreeningThough" type="checkbox"
+                   data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
+                   value="3ce14056-26fe-102b-80cb-0017a47871b2^DRY COUGH^99DCT">
+            DRY COUGH
+        </label>
+        <label>
+            <input id="obs.PositivePastScreeningResult" name="obs.PastScreeningResult" type="checkbox"
+                   data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
+                   value="3ccd2364-26fe-102b-80cb-0017a47871b2^CHEST PAIN^99DCT">
+            CHEST PAIN
+        </label>
+        <label>
+            <input id="obs.NegativePastScreeningResult" name="obs.PastScreeningResult" type="checkbox"
+                   data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
+                   value="3cccc7ac-26fe-102b-80cb-0017a47871b2^RHEUMATISM^99DCT">
+            RHEUMATISM
+        </label>
+        <label>
+            <input id="obs.ResultsNotReceivedPastScreeningResult" name="obs.PastScreeningResult" type="checkbox"
+                   data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
+                   value="3ce50fec-26fe-102b-80cb-0017a47871b2^LOSS OF APPETITE^99DCT">
+            LOSS OF APPETITE
+        </label>
 
-            <label>
-                <input id="obs.TypeOfTreatmentPerformedCryotherapy" name="obs.TypeOfTreatmentPerformed" type="checkbox"
-                       data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
-                       value="3ccdf8d4-26fe-102b-80cb-0017a47871b2^ABDOMINAL PAIN^99DCT">
-                ABDOMINAL PAIN
-            </label>
-            <label>
-                <input id="obs.TypeOfTreatmentPerformedThermoAblation" name="obs.TypeOfTreatmentPerformed" type="checkbox"
-                       data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
-                       value="b694aa46-7543-46ac-ad86-80e501a82289^AGITATION^99DCT">
-                AGITATION
-            </label>
-            <label>
-                <input id="obs.TypeOfTreatmentPerformedLEEP" name="obs.TypeOfTreatmentPerformed" type="checkbox"
-                       data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
-                       value="f48fb2a9-9276-4096-b297-a41f903b8621^NECK PAIN^99DCT">
-                NECK PAIN
-            </label>
+        <label>
+            <input id="obs.TypeOfTreatmentPerformedCryotherapy" name="obs.TypeOfTreatmentPerformed" type="checkbox"
+                   data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
+                   value="3ccdf8d4-26fe-102b-80cb-0017a47871b2^ABDOMINAL PAIN^99DCT">
+            ABDOMINAL PAIN
+        </label>
+        <label>
+            <input id="obs.TypeOfTreatmentPerformedThermoAblation" name="obs.TypeOfTreatmentPerformed" type="checkbox"
+                   data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
+                   value="b694aa46-7543-46ac-ad86-80e501a82289^AGITATION^99DCT">
+            AGITATION
+        </label>
+        <label>
+            <input id="obs.TypeOfTreatmentPerformedLEEP" name="obs.TypeOfTreatmentPerformed" type="checkbox"
+                   data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
+                   value="f48fb2a9-9276-4096-b297-a41f903b8621^NECK PAIN^99DCT">
+            NECK PAIN
+        </label>
 
-            <div class="form-group freetext">
-                <label for="freetext_general_ch">Other Complaints</label>
-                <textarea class="form-control" id="freetext_general_ot" name="freetext_general"
-                          type="text" data-concept="3cdd258e-26fe-102b-80cb-0017a47871b2^SYMPTOM COMMENT^99DCT"></textarea>
-            </div>
+        <div class="form-group freetext">
+            <label for="freetext_general_ch">Other Complaints</label>
+            <textarea class="form-control" id="freetext_general_ot" name="freetext_general"
+                      type="text" data-concept="3cdd258e-26fe-102b-80cb-0017a47871b2^SYMPTOM COMMENT^99DCT"></textarea>
+        </div>
 
-            <div class="form-group freetext">
-                <label for="freetext_general_hi">HISTORY OF PRESENT ILLNESS</label>
-                 <textarea class="form-control" id="freetext_general_hi" name="freetext_general"
+        <div class="form-group freetext">
+            <label for="freetext_general_hi">HISTORY OF PRESENT ILLNESS</label>
+            <textarea class="form-control" id="freetext_general_hi" name="freetext_general"
                       type="text" data-concept="24aa74e0-a281-4031-8919-63f3eaf3a729^History of the present illness^99DCT"></textarea>
-            </div>
+        </div>
 
 
-           <div class="form-group freetext">
-               <label for="freetext_general_ch">PAST MEDICAL HISTORY</label>
-               <textarea class="form-control" id="freetext_general_ch" name="freetext_general"
-                         type="text" data-concept="bc3862d8-6825-4878-8801-f1e7b0790071^PAST MEDICAL HISTORY^99DCT"></textarea>
-           </div>
+        <div class="form-group freetext">
+            <label for="freetext_general_ch">PAST MEDICAL HISTORY</label>
+            <textarea class="form-control" id="freetext_general_ch" name="freetext_general"
+                      type="text" data-concept="bc3862d8-6825-4878-8801-f1e7b0790071^PAST MEDICAL HISTORY^99DCT"></textarea>
+        </div>
     </fieldset>
     <!-- =========================================================================================== -->
     <hr/>
@@ -241,46 +237,58 @@
             <div class="form-group freetext">
                 <label for="freetext_general_c">CENTRAL NERVEOUS SYSTEM (Glasgow, Reflexes, Muscle Power And Tonicity, Sensitivity and Motricity)</label>
                 <textarea class="form-control" id="freetext_general_c" name="freetext_general"
-                  type="text" data-concept="2145^FREETEXT GENERAL^99DCT"></textarea>
-             </div>
+                          type="text" data-concept="2145^FREETEXT GENERAL^99DCT"></textarea>
+            </div>
 
             <div class="form-group freetext">
                 <label for="freetext_general_ca">CARDIOVASCULAR SYSTEM</label>
                 <textarea class="form-control" id="freetext_general_ca" name="freetext_general"
-                  type="text" data-concept="2143^FREETEXT GENERAL^99DCT"></textarea>
+                          type="text" data-concept="2143^FREETEXT GENERAL^99DCT"></textarea>
             </div>
 
             <div class="form-group freetext">
                 <label for="freetext_general_r">RESPIRATORY SYSTEM</label>
                 <textarea class="form-control" id="freetext_general_r" name="freetext_general"
-                  type="text" data-concept="2141^FREETEXT GENERAL^99DCT"></textarea>
+                          type="text" data-concept="2141^FREETEXT GENERAL^99DCT"></textarea>
             </div>
 
             <div class="form-group freetext">
                 <label for="freetext_general_g">GASTRO-INTESTINAL TRACT</label>
                 <textarea class="form-control" id="freetext_general_g" name="freetext_general"
-                  type="text" data-concept="2144^FREETEXT GENERAL^99DCT"></textarea>
+                          type="text" data-concept="2144^FREETEXT GENERAL^99DCT"></textarea>
             </div>
 
             <div class="form-group freetext">
                 <label for="freetext_general_ge">GENITOURINARY SYSTEM</label>
                 <textarea class="form-control" id="freetext_general_ge" name="freetext_general"
-                  type="text" data-concept="2149^FREETEXT GENERAL^99DCT"></textarea>
+                          type="text" data-concept="2149^FREETEXT GENERAL^99DCT"></textarea>
             </div>
             <div class="form-group freetext">
                 <label for="freetext_general_m">MUSCULOSKELETAL</label>
                 <textarea class="form-control" id="freetext_general_m" name="freetext_general"
-                  type="text" data-concept="2147^FREETEXT GENERAL^99DCT"></textarea>
+                          type="text" data-concept="2147^FREETEXT GENERAL^99DCT"></textarea>
             </div>
             <div class="form-group freetext">
                 <label for="freetext_general_cl">CLINICAL SUMMARY</label>
                 <textarea class="form-control" id="freetext_general_cl" name="freetext_general"
-                  type="text" data-concept="9633^FREETEXT GENERAL^99DCT"></textarea>
+                          type="text" data-concept="9633^FREETEXT GENERAL^99DCT"></textarea>
+            </div>
+
+            <div class="form-group freetext">
+                <label for="freetext_general_cl">Investigations</label>
+                <textarea class="form-control" id="freetext_general_Iv" name="freetext_general"
+                          type="text" data-concept="315c44dc-202c-41f9-a0b5-b36640fc326c^FREETEXT GENERAL^99DCT"></textarea>
+            </div>
+
+            <div class="form-group freetext">
+                <label for="freetext_general_cl">Treatment Plan</label>
+                <textarea class="form-control" id="freetext_general_tp" name="freetext_general"
+                          type="text" data-concept="3ce88a32-26fe-102b-80cb-0017a47871b2^FREETEXT GENERAL^99DCT"></textarea>
             </div>
         </div>
     </fieldset>
 
-    <hr/>
+    <!--<hr/>
     <h3> DIAGNOSIS </h3>
     <hr/>
     <fieldset></fieldset>
@@ -297,13 +305,14 @@
             <option value="cf6520f1-d38a-11e8-b6e2-0c5b8f279a64^DAYS^99DCT">Oth coronavirus as the cause of diseases classd elswhr - B9729</option>
             <option value="cf6a6236-d38a-11e8-b6e2-0c5b8f279a64^DAYS^99DCT">Pneumonia due to SARS-associated coronavirus - J1281</option>
             <option value="cf6520d7-d38a-11e8-b6e2-0c5b8f279a64^DAYS^99DCT">SARS-associated coronavirus causing diseases classd elswhr - B9721</option>
-            <!--<option value="1073^WEEKS^99DCT">Weeks</option>
-            <option value="1074^MONTHS^99DCT">Months</option>-->
-            <!-- ... More options in between here -->
+            &lt;!&ndash;<option value="1073^WEEKS^99DCT">Weeks</option>
+            <option value="1074^MONTHS^99DCT">Months</option>&ndash;&gt;
+            &lt;!&ndash; ... More options in between here &ndash;&gt;
             <option value="1079^CONTINUOUS^99DCT">Continuous</option>
         </select>
     </div>
-    </fieldset>
+    </fieldset>-->
+
     <div>
         <input id="save_draft" name="save_draft" type="submit" value="Draft"/>
         <input id="submit_form" name="submit_form" type="submit" value="submit"/>
