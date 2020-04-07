@@ -17,7 +17,7 @@
 <body class="col-md-8 col-md-offset-2">
 <div id="pre_populate_data"></div>
 <form id="breastcancer_form" name="breastcancer_form">
-    <h2 class="text-center">Clinical Examination</h2>
+    <h2 class="text-center">Clinical Follow Up Form</h2>
 
     <!--=======================================================================================-->
 
@@ -135,14 +135,14 @@
                 <label for="obs.Saturation">Saturation:</label>
                 <input id="obs.Saturation" class="form-control" name="obs.Saturation" type="number" data-concept="5092^Saturation^99DCT"/>
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label>Soins Infirmiers: </label>
                 <textarea class="form-control" id="obs.SoinsInfirmiers" name="obs.SoinsInfirmiers" type="text"  rows="2" data-concept="1364^SoinsInfirmiers^99DCT"></textarea>
             </div>
             <div class="form-group">
                 <label>Observations: </label>
                 <textarea class="form-control" id="obs.Observations" name="obs.Observations" type="text"  rows="2" data-concept="1391^Observations^99DCT"></textarea>
-            </div>
+            </div>-->
         </fieldset>
     </div>
 
@@ -181,6 +181,12 @@
                    data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
                    value="3cccc7ac-26fe-102b-80cb-0017a47871b2^RHEUMATISM^99DCT">
             RHEUMATISM
+        </label>
+        <label>
+            <input id="obs.NegativePastScreeningResultps" name="obs.PastScreeningResult" type="checkbox"
+                   data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
+                   value="8292a426-3f05-4ea0-b960-4df5ccbb93f3^DIFFICULTY BREATHING^99DCT">
+            DIFFICULTY BREATHING
         </label>
         <label>
             <input id="obs.ResultsNotReceivedPastScreeningResult" name="obs.PastScreeningResult" type="checkbox"

@@ -17,7 +17,7 @@
 <body class="col-md-8 col-md-offset-2">
 <div id="pre_populate_data"></div>
 <form id="breastcancer_form" name="breastcancer_form">
-    <h2 class="text-center">Clinical Examination</h2>
+    <h2 class="text-center">Clinical Admission Form</h2>
 
     <!--=======================================================================================-->
 
@@ -106,7 +106,7 @@
         <h3>VITAL SIGNS</h3>
         <fieldset>
             <div class="form-group">
-                <label for="obs.Tepmerature">Tepmerature (oC):</label>
+                <label for="obs.Tepmerature">Temperature (oC):</label>
                 <input id="obs.Tepmerature" class="form-control" name="obs.Tepmerature" type="number" data-concept="5088^Tepmerature (oC)^99DCT"/>
             </div>
             <div class="form-group">
@@ -133,14 +133,14 @@
                 <label for="obs.Saturation">Saturation:</label>
                 <input id="obs.Saturation" class="form-control" name="obs.Saturation" type="number" data-concept="5092^Saturation^99DCT"/>
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label>Soins Infirmiers: </label>
                 <textarea class="form-control" id="obs.SoinsInfirmiers" name="obs.SoinsInfirmiers" type="text"  rows="2" data-concept="1364^SoinsInfirmiers^99DCT"></textarea>
             </div>
             <div class="form-group">
                 <label>Observations: </label>
                 <textarea class="form-control" id="obs.Observations" name="obs.Observations" type="text"  rows="2" data-concept="1391^Observations^99DCT"></textarea>
-            </div>
+            </div>-->
         </fieldset>
     </div>
 
@@ -186,6 +186,12 @@
                        value="3cccc7ac-26fe-102b-80cb-0017a47871b2^RHEUMATISM^99DCT">
                 RHEUMATISM
             </label>
+           <label>
+               <input id="obs.NegativePastScreeningResultps" name="obs.PastScreeningResult" type="checkbox"
+                      data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
+                      value="8292a426-3f05-4ea0-b960-4df5ccbb93f3^DIFFICULTY BREATHING^99DCT">
+               DIFFICULTY BREATHING
+           </label>
             <label>
                 <input id="obs.ResultsNotReceivedPastScreeningResult" name="obs.PastScreeningResult" type="checkbox"
                        data-concept="3cd95a58-26fe-102b-80cb-0017a47871b2^SYMPTOM PRESENT^99DCT"
@@ -283,7 +289,6 @@
     <hr/>
     <h3> DIAGNOSIS </h3>
     <hr/>
-    <fieldset></fieldset>
     <div class="form-group differential_count">
         <label for="differential_count">
             DIFFERENTIAL DIAGNOSIS
@@ -297,11 +302,12 @@
             <option value="cf6520f1-d38a-11e8-b6e2-0c5b8f279a64^DAYS^99DCT">Oth coronavirus as the cause of diseases classd elswhr - B9729</option>
             <option value="cf6a6236-d38a-11e8-b6e2-0c5b8f279a64^DAYS^99DCT">Pneumonia due to SARS-associated coronavirus - J1281</option>
             <option value="cf6520d7-d38a-11e8-b6e2-0c5b8f279a64^DAYS^99DCT">SARS-associated coronavirus causing diseases classd elswhr - B9721</option>
-            <!--<option value="1073^WEEKS^99DCT">Weeks</option>
-            <option value="1074^MONTHS^99DCT">Months</option>-->
-            <!-- ... More options in between here -->
-            <option value="1079^CONTINUOUS^99DCT">Continuous</option>
         </select>
+    </div>
+    <div class="form-group freetext">
+        <label for="freetext_general">OTHER DIAGNOSIS</label>
+        <input class="form-control" id="freetext_general" name="freetext_general"
+               type="text" data-concept="135d1163-d50a-411c-9ea1-530ca2033e10^OTHER DIAGNOSIS^99DCT">
     </div>
     </fieldset>
     <div>
