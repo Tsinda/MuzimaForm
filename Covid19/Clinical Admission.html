@@ -16,11 +16,8 @@
 </head>
 <body class="col-md-8 col-md-offset-2">
 <div id="pre_populate_data"></div>
-<form id="breastcancer_form" name="breastcancer_form">
+<form id="Clinical_Admission_form" name="Clinical_Admission_form">
     <h2 class="text-center">Clinical Admission Form</h2>
-
-    <!--=======================================================================================-->
-
     <div class="section">
         <fieldset>
             <h3>Encounter Details</h3>
@@ -88,7 +85,7 @@
             </div>
             <div class="form-group">
                 <label for="patient.sex">Gender:</label>
-                <select class="form-control" id="patient.sex" name="patient.sex" disabled="disabled">
+                <select class="form-control" id="patient.sex" name="patient.sex" readonly="readonly" disabled="disabled">
                     <option value="">...</option>
                     <option value="M">Male</option>
                     <option value="F">Female</option>
@@ -133,14 +130,6 @@
                 <label for="obs.Saturation">Saturation:</label>
                 <input id="obs.Saturation" class="form-control" name="obs.Saturation" type="number" data-concept="5092^Saturation^99DCT"/>
             </div>
-            <!--<div class="form-group">
-                <label>Soins Infirmiers: </label>
-                <textarea class="form-control" id="obs.SoinsInfirmiers" name="obs.SoinsInfirmiers" type="text"  rows="2" data-concept="1364^SoinsInfirmiers^99DCT"></textarea>
-            </div>
-            <div class="form-group">
-                <label>Observations: </label>
-                <textarea class="form-control" id="obs.Observations" name="obs.Observations" type="text"  rows="2" data-concept="1391^Observations^99DCT"></textarea>
-            </div>-->
         </fieldset>
     </div>
 
@@ -317,95 +306,48 @@
 </form>
 </body>
 <script type="text/javascript">
-$(document).ready(function () {
-
-    document.setupAutoCompleteDataForProvider('encounter\\.provider_id_select');
-    document.setupAutoCompleteData('encounter\\.location_id');
-    document.setupValidationForProvider($('#encounter\\.provider_id_select').val(),$("#encounter\\.provider_id"));
-    document.setupValidationForLocation($('#encounter\\.location_id').val(),$("encounter\\.location_id"));
-
-    $('#save_draft').click(function () {
-        $(this).prop('disabled', true);
-        document.saveDraft();
-        $(this).prop('disabled', false);
-    });
-
-    $('#submit_form').click(function () {
-        $(this).prop('disabled', true);
-        document.submit();
-        $(this).prop('disabled', false);
-    });
-
-    $('#breastcancer_form').validate({
-        rules: {
-            weight_kg: {
-                number: true,
-                range: [0, 250]
-            },
-            height_cm: {
-                number: true,
-                range: [10, 228]
+        $(document).ready(function () {
+           var dateFormat = "dd-mm-yy";
+            var currentDate = $.datepicker.formatDate(dateFormat, new Date());
+            var encounterDatetime = $('#encounter\\.encounter_datetime');
+            if ($(encounterDatetime).val() == "") {
+                $(encounterDatetime).val(currentDate);
             }
-        },
-        submitHandler: function (form) {
-            $('#result').html(JSON.stringify($('form').serializeEncounterForm(), undefined, 2));
-        }
-    });
 
-    var locationName = [
-        {"val": "7", "label": "Chulaimbo"},
-        {"val": "3", "label": "Turbo"},
-        {"val": "17", "label": "Iten"}
-    ];
-    $('#encounter\\.location_id').autocomplete({
-        source: locationName,
-        create: function (event, ui) {
-            var location_val = $('input[name="encounter\\.location_id"]').val();
-            $.each(locationName, function (i, elem) {
-                if (elem.val == location_val) {
-                    $('#encounter\\.location_id').val(elem.label)
-                }
-                ;
+            $('#save_draft').click(function () {
+            $(this).prop('disabled', true);
+            document.saveDraft(this);
+            $(this).prop('disabled', false);
             });
-        },
-        select: function (event, ui) {
-            $('input[name="encounter\\.location_id"]').val(ui.item.val);
-            $('#encounter\\.location_id').val(ui.item.label);
-            return false;
-        }
-    });
+            $('#submit_form').click(function () {
+                $(this).prop('disabled', true);
+                document.submit();
+                $(this).prop('disabled', false);
+            });
 
-    var provider = [
-        {"label": "Daurine Achieng Agumba", "val": "3419-9"},
-        {"label": "Irene Chepkosgei Kurgat", "val": "3420-7"},
-        {"label": "Rose Cheruto Toroitich", "val": "3421-5"},
-        {"label": "Mary Kipkurui Kimosop", "val": "3422-3"}
-    ];
-
-    $('#encounter\\.provider_id_select').autocomplete({
-        source: provider,
-        create: function (event, ui) {
-            var provider_val = $('input[name="encounter\\.provider_id_select"]').val();
-            $.each(provider, function (i, elem) {
-                if (elem.val == provider_val) {
-                    $('#encounter\\.provider_id_select').val(elem.label)
+            document.setupAutoCompleteData('encounter\\.location_id');
+            document.setupValidationForLocation("$('#encounter\\.location_id').val()","encounter\\.location_id");
+            document.setupAutoCompleteDataForProvider('encounter\\.provider_id_select');
+            document.setupValidationForProvider("$('#encounter\\.provider_id_select').val()","encounter\\.provider_id");
+            $('#encounter\\.provider_id_select').change(function () {
+                if ($('#encounter\\.provider_id_select').val() === '') {
+                    $('#encounter\\.provider_id').val('');
+                       $('.show_provider_id_text').show();
                 }
             });
-        },
-        select: function (event, ui) {
-            $('input[name="encounter\\.provider_id_select"]').val(ui.item.val);
-            $('#encounter\\.provider_id_select').val(ui.item.label);
-            $('#encounter\\.provider_id').val(ui.item.val);
-            $('.show_provider_id_text').hide();
-            return false;
-        }
-    });
-    $('#encounter\\.provider_id_select').change(function () {
-        if ($('#encounter\\.provider_id_select').val() === '') {
-            $('#encounter\\.provider_id').val('');
-            $('.show_provider_id_text').show();
-        }
-    });
-});
+            $('.future-or-today-date').change(function () {
+                if ($(this).is(':visible') && $(this).val() != '') {
+                    var errors = {};
+                    var pattern = /(\d{2})-(\d{2})-(\d{4})/g;
+                    var matches = pattern.exec($(this).val());
+                    var enteredDate = new Date(matches[3], matches[2] - 1, matches[1]);
+                    var today = new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate());
+                    if (enteredDate < today) {
+                        errors[$(this).attr('name')] = "Please enter present or future date.";
+                    }
+                    toggleValidationMessages(errors);
+                }
+            });
+        });
 </script>
 </html>
